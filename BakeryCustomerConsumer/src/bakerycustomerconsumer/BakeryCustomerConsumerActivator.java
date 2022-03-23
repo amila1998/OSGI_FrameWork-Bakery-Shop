@@ -15,7 +15,9 @@ public class BakeryCustomerConsumerActivator implements BundleActivator {
 
 	public void start(BundleContext context) throws Exception {
 		String decision = "y";
+		String backeryItems;
 		Scanner sc = new Scanner(System.in);
+		
 		
 		
 		System.out.println("Start Consumer Service");
@@ -59,6 +61,28 @@ public class BakeryCustomerConsumerActivator implements BundleActivator {
 			}
 		}while(!decision.equals("Y")||!decision.equals("y")|| !decision.equals("N")||!decision.equals("n"));
 		bakeryItemsProducer.itemcustomerwellcome();
+		System.out.println("You Have a Account ?(Y/N)");
+		backeryItems = sc.next();
+		int cBackeryItems = Integer.parseInt(backeryItems);
+		do {}while(cBackeryItems>=1&&cBackeryItems<=5);
+		switch (cBackeryItems) {
+		  case 1:
+		    System.out.println("Monday");
+		    break;
+		  case 2:
+		    System.out.println("Tuesday");
+		    break;
+		  case 3:
+		    System.out.println("Wednesday");
+		    break;
+		  case 4:
+		    System.out.println("Thursday");
+		    break;
+		  case 5:
+		    System.out.println("Friday");
+		    break;
+		 
+		}
 	}
 
 	public void stop(BundleContext context) throws Exception {
