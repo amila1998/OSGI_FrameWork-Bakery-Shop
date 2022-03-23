@@ -46,7 +46,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		customer.setcAddress(address);
 		customer.setcPhone(phone);
 		
-		
+		this.AddRecord();
 		
 		
 	}
@@ -57,8 +57,8 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	public String display() {
 		//this.savetoDB(customer.getcName());
 		
-			this.AddRecord();
-			this.ViewAllRecord();
+			
+			//this.ViewAllRecord();
 		
 		return customer.getcName() + " " + customer.getcAddress() + " " + customer.getcEmail() + " " + customer.getcPhone() + " ";
 	}
@@ -66,6 +66,8 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	
 	
 	public void AddRecord() {
+		
+		 boolean found = false;
 		/*try {
 			oos =new ObjectOutputStream(new FileOutputStream(file));
 			oos.writeObject("Amila"+" "+"Panadura");
@@ -103,7 +105,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		    		  
 		    		   RandomAccessFile raf
 		                = new RandomAccessFile(myObj, "rw");
-		            boolean found = false;
+		           
 		 
 		            
 		            while (raf.getFilePointer() < raf.length()) {
@@ -125,6 +127,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		                    || number.equals(newNumber)) {
 		                    found = true;
 		                    System.out.println(" You are already Registered!!! ");
+		                    
 		                    break;
 		                }
 		            }
@@ -183,6 +186,8 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 
 	@Override
 	public void customerLogin(String cname, String cphone) {
+		boolean found = false;
+		
 		try {
 			
 			File myObj = new File("customer11.txt");  
@@ -207,8 +212,8 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		    		   RandomAccessFile raf
 		                = new RandomAccessFile(myObj, "rw");
 		           
-		    		   System.out.println(cname + cphone +", ");
-		    		   boolean found = false;
+		    		   
+		    		   
 		 
 		            
 		            while (raf.getFilePointer() < raf.length()) {
@@ -226,9 +231,6 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		                remail = lineSplit[2];
 		                raddress = lineSplit[3];
 		                
-		                System.out.println(
-		                        "Friend Name: " + rname + "\n"
-		                        + "Contact Number: " + rphone + "\n\n");
 		                
 		                if (rname.equals(cname) 
 		                    && rphone.equals(cphone)) {
@@ -246,6 +248,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		 
 		              
 		            	System.out.println("There is no any Account");
+		            	
 		 
 		                raf.close();
 		            }
@@ -262,12 +265,16 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		    } catch (IOException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();  
-		    }  
+		    }
+	  
 		
  
 		
 		
-	}	
+	}
+
+
+	
 	
 	
 	

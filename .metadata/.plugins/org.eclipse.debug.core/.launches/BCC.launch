@@ -1001,8 +1001,10 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="BakeryAdminProducer@default:default"/>
         <setEntry value="BakeryCustomerConsumer@default:default"/>
         <setEntry value="BakeryCustomerProducer@default:default"/>
+        <setEntry value="BakeryItemsProducer@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <booleanAttribute key="tracing" value="false"/>
