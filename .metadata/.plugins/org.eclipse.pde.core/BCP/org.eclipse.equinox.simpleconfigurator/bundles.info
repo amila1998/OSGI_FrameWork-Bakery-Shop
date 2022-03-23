@@ -3,6 +3,7 @@
 BakeryAdminProducer,1.0.0.qualifier,file:/C:/Users/Devin/Desktop/New%20folder%20(5)/SA%20Assignment%2001/BakeryAdminProducer/,4,true
 BakeryCustomerConsumer,1.0.0.qualifier,file:/C:/Users/Devin/Desktop/New%20folder%20(5)/SA%20Assignment%2001/BakeryCustomerConsumer/,4,true
 BakeryCustomerProducer,1.0.0.qualifier,file:/C:/Users/Devin/Desktop/New%20folder%20(5)/SA%20Assignment%2001/BakeryCustomerProducer/,4,true
+BakeryItemsProducer,1.0.0.qualifier,file:/C:/Users/Devin/Desktop/New%20folder%20(5)/SA%20Assignment%2001/BakeryItemsProducer/,4,true
 biz.aQute.bndlib,5.1.2.202007211702,file:/C:/Users/Devin/.p2/pool/plugins/biz.aQute.bndlib_5.1.2.202007211702.jar,4,true
 ch.qos.logback.classic,1.2.3.v20200428-2012,file:/C:/Users/Devin/.p2/pool/plugins/ch.qos.logback.classic_1.2.3.v20200428-2012.jar,4,true
 ch.qos.logback.core,1.2.3.v20200428-2012,file:/C:/Users/Devin/.p2/pool/plugins/ch.qos.logback.core_1.2.3.v20200428-2012.jar,4,true

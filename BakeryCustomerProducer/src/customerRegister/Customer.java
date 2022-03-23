@@ -17,7 +17,7 @@ public class Customer implements Serializable {
 		this.cName = cName;
 		this.cAddress = cAddress;
 		this.cEmail = cEmail;
-		this.cPhone = cPhone;
+		this.cPhone = cPPhone;
 		
 	}
 	
