@@ -1,5 +1,0 @@
-package mongoDBConn;
-
-public class DBManager {
-
-}

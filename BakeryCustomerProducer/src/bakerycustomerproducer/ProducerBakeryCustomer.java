@@ -81,7 +81,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 			e.printStackTrace();
 		}*/
 		try {  
-		      File myObj = new File("customer11.txt");  
+		      File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");  
 		      if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
 		      } else {  
@@ -169,7 +169,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	
 	public void ViewAllRecord()  {
 		try {
-		      File myObj = new File("customer11.txt");
+		      File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
@@ -190,7 +190,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		
 		try {
 			
-			File myObj = new File("customer11.txt");  
+			File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");  
 			if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
 		      } else {  
