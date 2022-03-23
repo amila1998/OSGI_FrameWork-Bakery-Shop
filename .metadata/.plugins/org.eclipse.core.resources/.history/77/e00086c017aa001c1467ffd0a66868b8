@@ -1,5 +1,0 @@
-package bakeryadminproducer;
-
-public class ProducerBakeryAdmin implements BakeryAdminProducer {
-
-}
