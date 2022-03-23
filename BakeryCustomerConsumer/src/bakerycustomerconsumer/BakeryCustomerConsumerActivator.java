@@ -62,7 +62,7 @@ public class BakeryCustomerConsumerActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Cuatomer Consumer'Good Bye !!!");
+		System.out.println("Cuatomer Consumer Good Bye !!!");
 		if(serviceReference != null) {
 			context.ungetService(serviceReference);
 		}
