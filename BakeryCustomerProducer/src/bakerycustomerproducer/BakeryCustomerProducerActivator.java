@@ -16,7 +16,7 @@ public class BakeryCustomerProducerActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Cloth Shop Producer Stop");
+		System.out.println("Bakery Customer Producer Stop");
 		publishServiceRegistration.unregister();
 	}
 

@@ -4,6 +4,7 @@ public class Item {
 	private String itemName;
 	private String itemCategory;
 	private String itemPrice;
+	private String itemQty;
 	/**
 	 * @return the itemName
 	 */
@@ -40,11 +41,26 @@ public class Item {
 	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
 	}
-	public Item(String itemName, String itemCategory, String itemPrice) {
+	
+		
+	/**
+	 * @return the itemQty
+	 */
+	public String getItemQty() {
+		return itemQty;
+	}
+	/**
+	 * @param itemQty the itemQty to set
+	 */
+	public void setItemQty(String itemQty) {
+		this.itemQty = itemQty;
+	}
+	public Item(String itemName, String itemCategory, String itemPrice, String itemQty) {
 		super();
 		this.itemName = itemName;
 		this.itemCategory = itemCategory;
 		this.itemPrice = itemPrice;
+		this.itemQty = itemQty;
 	}
 	public Item() {
 		
