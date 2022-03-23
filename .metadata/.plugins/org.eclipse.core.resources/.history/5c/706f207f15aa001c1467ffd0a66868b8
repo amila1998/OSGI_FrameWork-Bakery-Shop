@@ -1,0 +1,5 @@
+package bakerycustomerproducer;
+
+public interface BakeryCustomerProducer {
+
+}
