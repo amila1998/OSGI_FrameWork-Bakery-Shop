@@ -71,7 +71,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		 boolean found = false;
 
 		try {  
-		      File myObj = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\customer.txt");  
+		      File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");  
 		      if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
 		        System.out.println("File Opened: " + myObj.getAbsolutePath()); 
@@ -157,7 +157,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	
 	public void ViewAllRecord()  {
 		try {
-		      File myObj = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\customer.txt");
+		      File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
@@ -178,7 +178,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		
 		try {
 			
-			File myObj = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\customer.txt");  
+			File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");  
 			if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
 		        System.out.println("File Opened: " + myObj.getAbsolutePath()); 
