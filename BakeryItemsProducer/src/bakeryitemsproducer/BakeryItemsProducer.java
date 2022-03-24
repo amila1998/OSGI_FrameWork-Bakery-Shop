@@ -10,6 +10,7 @@ public interface BakeryItemsProducer {
 	public boolean checkQty(String icID,String icQty);
 	public void addToBill(String CName, String iID, String iQty);
 	public void showMyBill();
+	public void AddtoBillRegister(String deliverStatus);
 	
 	
 	//Admin

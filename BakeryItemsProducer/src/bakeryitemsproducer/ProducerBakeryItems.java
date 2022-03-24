@@ -10,10 +10,18 @@ import itemsAdder.Item;
 public class ProducerBakeryItems implements BakeryItemsProducer{
 	boolean itemSaveSuccMsg , isEmptyCategory, invalidID;
 	String BillName = "demo";
-	int myBillGrandTot;
+	public int myBillGrandTot;
 	
 	
 	
+	public int getMyBillGrandTot() {
+		return myBillGrandTot;
+	}
+
+	public void setMyBillGrandTot(int myBillGrandTot) {
+		this.myBillGrandTot = myBillGrandTot;
+	}
+
 	public String getBillName() {
 		return BillName;
 	}
@@ -591,7 +599,195 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 
 	@Override
 	public void showMyBill() {
-		// TODO Auto-generated method stub
+		boolean found = false;
+		
+		
+		try {  
+			
+		      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
+		      if (myObj2.createNewFile()) {  
+		        System.out.println("File created: " + myObj2.getName()); 
+		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
+		      } else {
+		    	  System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
+		      }
+		    	  try { 
+		    		  String nameNumberString;
+		    		  int index;
+		    		  String iiID;
+		              String iiQty;
+		              String iTPrice;
+		              
+
+		    		   RandomAccessFile raf
+		                = new RandomAccessFile(myObj2, "rw");
+
+		    		   System.out.println("----------------------------------------------------\n");
+		    		   System.out.println("------------------"+this.getBillName()+"-----------------\n");
+		    		   System.out.println("------------------Bill-----------------\n");
+		    		   System.out.println("\tItem ID\t"
+		            		   +"\tQty\t"
+		            		   +"\tTotal\t");
+		    		   
+		    		   while (raf.getFilePointer() < raf.length()) {
+
+		                nameNumberString = raf.readLine();
+
+		                String[] lineSplit
+		                    = nameNumberString.split("!");
+		 
+		               iiID = lineSplit[0];
+		               iiQty = lineSplit[1];
+		               iTPrice = lineSplit[2];
+			          
+		               System.out.println("\t"+iiID+"\t"
+		            		   +"\t"+iiQty+"\t"
+		            		   +"\t"+iTPrice+"\t");
+		               
+		               
+		            }
+		            	this.calculateGrandTot();
+		            	System.out.println("------------------------------------------------------\n");
+		            	System.out.println("Grand Total: Rs."+Integer.toString(this.myBillGrandTot)+".00");
+		            	System.out.println("------------------------------------------------------\n");
+
+		    	    } catch (IOException e) {
+		    	      System.out.println("An error occurred.");
+		    	      e.printStackTrace();
+		    	    }  
+		      
+
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();  
+		    }  
+
+		
+	}
+	
+	public void calculateGrandTot() {
+		boolean found = false;
+		int gt=0;
+		
+		try {  
+			
+		      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
+		      if (myObj2.createNewFile()) {  
+		        System.out.println("File created: " + myObj2.getName()); 
+		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
+		      } else {
+		    	  System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
+		      }
+		    	  try { 
+		    		  String nameNumberString;
+		    		  int index;
+		    		  String iiID;
+		              String iiQty;
+		              String iTPrice;
+		              
+
+		    		   RandomAccessFile raf
+		                = new RandomAccessFile(myObj2, "rw");
+
+		    		   
+		    		   
+		    		   while (raf.getFilePointer() < raf.length()) {
+
+		                nameNumberString = raf.readLine();
+
+		                String[] lineSplit
+		                    = nameNumberString.split("!");
+		 
+		               iiID = lineSplit[0];
+		               iiQty = lineSplit[1];
+		               iTPrice = lineSplit[2];
+
+		               
+		               this.myBillGrandTot =this.myBillGrandTot+Integer.parseInt(iTPrice);
+		               
+		               
+		               
+		            }
+		            	
+		            	
+
+		    	    } catch (IOException e) {
+		    	      System.out.println("An error occurred.");
+		    	      e.printStackTrace();
+		    	    }  
+		      
+
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();  
+		    }  
+	}
+
+	@Override
+	public void AddtoBillRegister(String deliverStatus) {
+		 boolean found = false;
+			
+			try {  
+			      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\BillRegister.txt");  
+			      if (myObj2.createNewFile()) {  
+			        System.out.println("File created: " + myObj2.getName()); 
+			        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
+			      } else {
+			    	  System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
+			      }
+			    	  try { 
+			    		  String nameNumberString;
+			    		  int index;
+			    		  String BillID;
+			              String GPrice;
+			              String DStatus;
+			              String newBillID = this.getBillName();
+			              String newGPrice = Integer.toString(this.myBillGrandTot);
+			              String newDStatus =  deliverStatus;
+
+			    		   RandomAccessFile raf
+			                = new RandomAccessFile(myObj2, "rw");
+
+			            while (raf.getFilePointer() < raf.length()) {
+
+			                nameNumberString = raf.readLine();
+
+			                String[] lineSplit
+			                    = nameNumberString.split("!");
+			 
+			                BillID = lineSplit[0];
+			                GPrice = lineSplit[1];
+			                DStatus = lineSplit[2];
+
+			            }
+			 
+			            
+
+			                nameNumberString
+			                    = newBillID + "!"
+			                      + newGPrice+"!"+newDStatus;
+			 
+			               
+			                raf.writeBytes(nameNumberString);
+			 
+			                raf.writeBytes(System.lineSeparator());
+			 
+			                System.out.println("Successfully Inserted to Bill Register !!! ");
+			                
+			               
+			                raf.close();
+			            
+
+			    	    } catch (IOException e) {
+			    	      System.out.println("An error occurred.");
+			    	      e.printStackTrace();
+			    	    }  
+			      
+
+			    } catch (IOException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();  
+			    }
 		
 	}
 	

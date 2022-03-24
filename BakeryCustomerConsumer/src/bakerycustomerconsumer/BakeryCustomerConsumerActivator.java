@@ -72,6 +72,25 @@ public class BakeryCustomerConsumerActivator implements BundleActivator {
 				System.out.println("Do you Want To Buy Items ?(Y/N)");
 				buyItemsDecision = sc.next();
 				if(buyItemsDecision.equals("n")||buyItemsDecision.equals("N")) {
+					
+					
+					bakeryItemsProducer.showMyBill();
+					System.out.println("Do you Want To Deliver ?(Y/N)");
+					String wantdeliverDecision = sc.next();
+					if(wantdeliverDecision.equals("n")||wantdeliverDecision.equals("N")) {
+						
+						bakeryItemsProducer.AddtoBillRegister("NO");
+						
+					}else if(wantdeliverDecision.equals("Y")||wantdeliverDecision.equals("y")) {
+						
+						bakeryItemsProducer.AddtoBillRegister("YES");
+						
+					}else {
+						System.out.println("Wrong Input !!");
+						wantdeliverDecision = "y";
+						continue;
+					}
+					String s = sc.next();
 					break;
 				}
 				bakeryItemsProducer.itemcustomerwellcome();
