@@ -10,7 +10,7 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
 public class BakeryCustomerConsumerActivator implements BundleActivator {
-
+	boolean check = false;
 	ServiceReference serviceReference,serviceReference2,serviceReferencecustomerItems;
 
 	public void start(BundleContext context) throws Exception {
@@ -73,24 +73,25 @@ public class BakeryCustomerConsumerActivator implements BundleActivator {
 				buyItemsDecision = sc.next();
 				if(buyItemsDecision.equals("n")||buyItemsDecision.equals("N")) {
 					
-					
-					bakeryItemsProducer.showMyBill();
-					System.out.println("Do you Want To Deliver ?(Y/N)");
-					String wantdeliverDecision = sc.next();
-					if(wantdeliverDecision.equals("n")||wantdeliverDecision.equals("N")) {
-						
-						bakeryItemsProducer.AddtoBillRegister("NO");
-						
-					}else if(wantdeliverDecision.equals("Y")||wantdeliverDecision.equals("y")) {
-						
-						bakeryItemsProducer.AddtoBillRegister("YES");
-						
-					}else {
-						System.out.println("Wrong Input !!");
-						wantdeliverDecision = "y";
-						continue;
+					if(check == true) {
+						bakeryItemsProducer.showMyBill();
+						System.out.println("Do you Want To Deliver ?(Y/N)");
+						String wantdeliverDecision = sc.next();
+						if(wantdeliverDecision.equals("n")||wantdeliverDecision.equals("N")) {
+							
+							bakeryItemsProducer.AddtoBillRegister("NO");
+							
+						}else if(wantdeliverDecision.equals("Y")||wantdeliverDecision.equals("y")) {
+							
+							bakeryItemsProducer.AddtoBillRegister("YES");
+							
+						}else {
+							System.out.println("Wrong Input !!");
+							
+						}
 					}
-					String s = sc.next();
+					
+					
 					break;
 				}
 				bakeryItemsProducer.itemcustomerwellcome();
@@ -125,6 +126,7 @@ public class BakeryCustomerConsumerActivator implements BundleActivator {
 									//AddtoBill
 									String myName=bakeryCustomerProducer.getMyName();
 									bakeryItemsProducer.addToBill(myName, iID, icQty);
+									check = true;
 									break;
 								}
 								if(qtyCheck == false) {
