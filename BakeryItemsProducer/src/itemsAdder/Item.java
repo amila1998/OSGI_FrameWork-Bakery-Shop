@@ -1,10 +1,20 @@
 package itemsAdder;
 
 public class Item {
+	private String itemID;
 	private String itemName;
 	private String itemCategory;
 	private String itemPrice;
 	private String itemQty;
+	
+	
+	
+	public String getItemID() {
+		return itemID;
+	}
+	public void setItemID(String itemID) {
+		this.itemID = itemID;
+	}
 	/**
 	 * @return the itemName
 	 */
