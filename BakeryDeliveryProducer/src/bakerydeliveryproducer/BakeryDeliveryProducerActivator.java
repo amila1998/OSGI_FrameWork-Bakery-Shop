@@ -2,21 +2,23 @@ package bakerydeliveryproducer;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+
 
 public class BakeryDeliveryProducerActivator implements BundleActivator {
 
-	private static BundleContext context;
+	ServiceRegistration publishServiceRegistration;
 
-	static BundleContext getContext() {
-		return context;
+	public void start(BundleContext context) throws Exception {
+		System.out.println("Bakery Delivery Producer Start");
+		BakeryDeliveryProducer bakeryDeliveryproducer = (BakeryDeliveryProducer) new ProducerBakeryDelivery();
+		publishServiceRegistration = context.registerService(BakeryDeliveryProducer.class.getName(), bakeryDeliveryproducer, null);
 	}
 
-	public void start(BundleContext bundleContext) throws Exception {
-		BakeryDeliveryProducerActivator.context = bundleContext;
-	}
-
-	public void stop(BundleContext bundleContext) throws Exception {
-		BakeryDeliveryProducerActivator.context = null;
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Bakery Delivery Producer Stop");
+		publishServiceRegistration.unregister();
 	}
 
 }
