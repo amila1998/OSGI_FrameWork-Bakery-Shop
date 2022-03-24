@@ -10,6 +10,7 @@ import itemsAdder.Item;
 public class ProducerBakeryItems implements BakeryItemsProducer{
 	boolean itemSaveSuccMsg , isEmptyCategory, invalidID;
 	String BillName = "demo";
+	int myBillGrandTot;
 	
 	
 	
@@ -78,7 +79,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		 boolean found = false;
 			
 			try {  
-			      File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\ItemsList.txt");  
+			      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
 			      if (myObj2.createNewFile()) {  
 			        System.out.println("File created: " + myObj2.getName()); 
 			        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -166,7 +167,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 				
 				try {
 					
-					File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\ItemsList.txt");  
+					File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
 					if (myObj2.createNewFile()) {  
 				        System.out.println("File created: " + myObj2.getName());  
 				        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -251,7 +252,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {
 			
-			File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\ItemsList.txt");  
+			File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
 			if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName());  
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -344,7 +345,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 				
 				try {
 					
-					File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\ItemsList.txt");  
+					File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
 					if (myObj2.createNewFile()) {  
 				        System.out.println("File created: " + myObj2.getName());  
 				        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -423,7 +424,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 
 	@Override
 	public void addToBill(String CName, String iID, String iQty) {
-		/**
+		
 		String gNo= Integer.toString(genarateANumber());
 		this.setBillName(CName+gNo);
 		int p =this.getItemPrice(iID);
@@ -433,7 +434,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {  
 			
-		      File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
+		      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
 		      if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName()); 
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -448,7 +449,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		              String iTPrice;
 		              String newiID = iID;
 		              String newTPrice =Integer.toString(tot);
-		              String newiQty =  item.getItemQty();
+		              String newiQty =  iQty;
 
 		    		   RandomAccessFile raf
 		                = new RandomAccessFile(myObj2, "rw");
@@ -464,11 +465,10 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		               iiQty = lineSplit[1];
 		               iTPrice = lineSplit[2];
 			          
-		                if (iiID.equals(newiID)
-		                    || iName.equals(newiName)) {
+		                if (iiID.equals(newiID)) {
 		                    found = true;
 		                    System.out.println(" Already Inserted!!! ");
-		                    this.setItemSaveSuccMsg(false);
+		                    
 		                    break;
 		                }
 		            }
@@ -477,7 +477,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 
 		                nameNumberString
 		                    = newiID + "!"
-		                      + newiName+"!"+newiCategory+"!"+newiPrice+"!"+newiQty;
+		                      + newiQty+"!"+newTPrice;
 		 
 		               
 		                raf.writeBytes(nameNumberString);
@@ -522,7 +522,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {
 			
-			File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\ItemsList.txt");  
+			File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
 			if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName());  
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -586,8 +586,16 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
     }
 
 		return p;
-		**/
+		
 	}
+
+	@Override
+	public void showMyBill() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 	
 
 
