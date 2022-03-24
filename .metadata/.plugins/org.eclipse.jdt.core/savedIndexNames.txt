@@ -14,6 +14,7 @@ INDEX VERSION 1.131+C:\Users\Hashi\Desktop\ASS1\OSGI_FrameWork-Bakery-Shop\.meta
 3985873674.index
 4125274465.index
 2055146867.index
+2062116555.index
 2648053808.index
 1705280951.index
 76430529.index
