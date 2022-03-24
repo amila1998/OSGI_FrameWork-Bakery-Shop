@@ -423,13 +423,16 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 
 	@Override
 	public void addToBill(String CName, String iID, String iQty) {
+		/**
 		String gNo= Integer.toString(genarateANumber());
 		this.setBillName(CName+gNo);
-		
+		int p =this.getItemPrice(iID);
+		int tot =  p*Integer.parseInt(iQty);
 		boolean found = false;
 		
 		
 		try {  
+			
 		      File myObj2 = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
 		      if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName()); 
@@ -441,14 +444,10 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		    		  String nameNumberString;
 		    		  int index;
 		    		  String iiID;
-		              String iName;
-		              String iCategory;
-		              String iPrice;
 		              String iiQty;
-		              String newiID = item.getItemID();
-		              String newiName = item.getItemName();
-		              String newiCategory = item.getItemCategory();
-		              String newiPrice = item.getItemPrice();
+		              String iTPrice;
+		              String newiID = iID;
+		              String newTPrice =Integer.toString(tot);
 		              String newiQty =  item.getItemQty();
 
 		    		   RandomAccessFile raf
@@ -462,11 +461,9 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		                    = nameNumberString.split("!");
 		 
 		               iiID = lineSplit[0];
-			           iName = lineSplit[1];
-			           iCategory = lineSplit[2];
-			           iPrice = lineSplit[3];
-			           iiQty = lineSplit[4];
-
+		               iiQty = lineSplit[1];
+		               iTPrice = lineSplit[2];
+			          
 		                if (iiID.equals(newiID)
 		                    || iName.equals(newiName)) {
 		                    found = true;
@@ -571,34 +568,28 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		            }
 		 
 		            if (found == false) {
-		 
-		              
-		            	System.out.println("|---------------------------------|");
+		     	System.out.println("|---------------------------------|");
 	            		System.out.println("| There is no Items in Under the "+icID+" ID !!"+" |");
 		            	
 		                raf.close();
 		            }
-		    		  
+		            
 		    		  
 		    	    } catch (IOException e) {
 		    	      System.out.println("An error occurred.");
 		    	      e.printStackTrace();
 		    	    }  
-		       
-      
-     
-      
+		
     } catch (IOException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();  
     }
 
-
-
-		
 		return p;
+		**/
 	}
 	
+
 
 
 }
