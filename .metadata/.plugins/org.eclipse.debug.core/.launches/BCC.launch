@@ -67,9 +67,13 @@
         <setEntry value="org.apache.httpcomponents.httpclient@default:default"/>
         <setEntry value="org.apache.httpcomponents.httpcore@default:default"/>
         <setEntry value="org.apache.jasper.glassfish@default:default"/>
-        <setEntry value="org.apache.lucene.analyzers-common@default:default"/>
+        <setEntry value="org.apache.lucene.analyzers-common*6.1.0.v20161115-1612@default:default"/>
+        <setEntry value="org.apache.lucene.analyzers-common*7.5.0.v20181003-1532@default:default"/>
+        <setEntry value="org.apache.lucene.analyzers-common*8.4.1.v20200122-1459@default:default"/>
         <setEntry value="org.apache.lucene.analyzers-smartcn@default:default"/>
-        <setEntry value="org.apache.lucene.core@default:default"/>
+        <setEntry value="org.apache.lucene.core*6.1.0.v20170814-1820@default:default"/>
+        <setEntry value="org.apache.lucene.core*7.5.0.v20181003-1532@default:default"/>
+        <setEntry value="org.apache.lucene.core*8.4.1.v20200122-1459@default:default"/>
         <setEntry value="org.apache.sshd.osgi@default:default"/>
         <setEntry value="org.apache.sshd.sftp@default:default"/>
         <setEntry value="org.apache.xerces@default:default"/>

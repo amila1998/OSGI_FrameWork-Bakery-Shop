@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.RandomAccessFile;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -17,11 +18,11 @@ import customerRegister.Customer;
 import mongoDBConn.DBManager;
 
 public class ProducerBakeryCustomer implements BakeryCustomerProducer {
+	private boolean lMsg;
 	
 	
 	
-	
-	
+	HashMap<String, String> billIems = new HashMap<String, String>();
 	Scanner input = new Scanner(System.in);
 	//Gson gson = new Gson();
 	Customer customer = new Customer();
@@ -68,23 +69,15 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	public void AddRecord() {
 		
 		 boolean found = false;
-		/*try {
-			oos =new ObjectOutputStream(new FileOutputStream(file));
-			oos.writeObject("Amila"+" "+"Panadura");
-			oos.close();
-			System.out.println("Added");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+
 		try {  
-		      File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");  
+		      File myObj = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\customer.txt");  
 		      if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
-		      } else {  
+		        System.out.println("File Opened: " + myObj.getAbsolutePath()); 
+		      } else {
+		    	  System.out.println("File Opened: " + myObj.getAbsolutePath()); 
+		      } 
 		    	  try { 
 		    		  String nameNumberString;
 		    		  int index;
@@ -96,12 +89,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		              String newNumber = customer.getcPhone();
 		              String newEmail = customer.getcEmail();
 		              String newAddress = customer.getcAddress();
-		    		  	    		 
-		    		  /**FileWriter myWriter = new FileWriter("customer.txt");
-		    	      myWriter.write(customer.getcName()+" "+customer.getcEmail());
-		    	      
-		    	      myWriter.close();
-		    	      System.out.println("Successfully wrote to the file.");**/
+	
 		    		  
 		    		   RandomAccessFile raf
 		                = new RandomAccessFile(myObj, "rw");
@@ -127,7 +115,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		                    || number.equals(newNumber)) {
 		                    found = true;
 		                    System.out.println(" You are already Registered!!! ");
-		                    
+		                    this.setlMsg(false);
 		                    break;
 		                }
 		            }
@@ -146,7 +134,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		 
 		                System.out.println("Registration Successfull !!! ");
 		                System.out.println("Hi " + newName +", ");
-		 
+		                this.setlMsg(true);
 		                raf.close();
 		            }
 		    		  
@@ -155,7 +143,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		    	      System.out.println("An error occurred.");
 		    	      e.printStackTrace();
 		    	    }  
-		      } 
+		      
 		      
 		     
 		      
@@ -169,7 +157,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	
 	public void ViewAllRecord()  {
 		try {
-		      File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");
+		      File myObj = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\customer.txt");
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
@@ -190,10 +178,13 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		
 		try {
 			
-			File myObj = new File("C:\\Users\\sean udayantha\\Desktop\\New folder\\customer.txt");  
+			File myObj = new File("C:\\Users\\Devin\\Desktop\\New folder (6)\\customer.txt");  
 			if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
-		      } else {  
+		        System.out.println("File Opened: " + myObj.getAbsolutePath()); 
+		      } else {
+		    	  System.out.println("File Opened: " + myObj.getAbsolutePath()); 
+		      } 
 		    	  try { 
 		    		  String nameNumberString;
 		    		  int index;
@@ -202,13 +193,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		              String raddress;
 		              String remail;
 		             
-		    		  	    		 
-		    		  /**FileWriter myWriter = new FileWriter("customer.txt");
-		    	      myWriter.write(customer.getcName()+" "+customer.getcEmail());
-		    	      
-		    	      myWriter.close();
-		    	      System.out.println("Successfully wrote to the file.");**/
-		    		  
+		  
 		    		   RandomAccessFile raf
 		                = new RandomAccessFile(myObj, "rw");
 		           
@@ -240,6 +225,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		            		customer.setcAddress(raddress);
 		            		customer.setcPhone(rphone);
 		            		System.out.println("Hi " + rname +", ");
+		            		this.setlMsg(true);
 		                    break;
 		                }
 		            }
@@ -248,7 +234,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		 
 		              
 		            	System.out.println("There is no any Account");
-		            	
+		            	this.setlMsg(false);
 		 
 		                raf.close();
 		            }
@@ -258,7 +244,7 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		    	      System.out.println("An error occurred.");
 		    	      e.printStackTrace();
 		    	    }  
-		      } 
+		      
 		      
 		     
 		      
@@ -272,6 +258,36 @@ public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 		
 		
 	}
+
+
+	@Override
+	public boolean loggingSucc() {
+		return this.islMsg();
+		
+		
+	}
+	
+
+
+	public boolean islMsg() {
+		return lMsg;
+	}
+
+
+	public void setlMsg(boolean lMsg) {
+		this.lMsg = lMsg;
+	}
+
+
+	@Override
+	public String getMyName() {
+		
+		return customer.getcName();
+	}
+	
+	
+
+	
 
 
 	
