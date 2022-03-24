@@ -18,7 +18,7 @@ public class ProducerBakeryCook implements BakeryCookProducer{
 	@Override
 	public String wellcomeCook() {
 		// TODO Auto-generated method stub
-		return "_________________________________ Bakery Cook DashBoard _________________________________\\n";
+		return "_________________________________ Bakery Cook DashBoard _________________________________\n";
 	}
 
 	@Override
@@ -110,7 +110,7 @@ public class ProducerBakeryCook implements BakeryCookProducer{
 					raf.writeBytes(System.lineSeparator());
 
 					System.out.println("New Recipes added Successfull !!! ");
-					System.out.println("Hi " + newfoodItem+", well be added to the shop ");
+					System.out.println("" + newrecipesName+", Recipes well be added to the shop ");
 
 					raf.close();
 				}
@@ -139,7 +139,7 @@ public class ProducerBakeryCook implements BakeryCookProducer{
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
-		        System.out.println("......................................Avilabal Oders in shop....................................\n");
+		        System.out.println("......................................Available Oders in shop....................................\n");
 		        System.out.println(data);
 		      }
 		      myReader.close();

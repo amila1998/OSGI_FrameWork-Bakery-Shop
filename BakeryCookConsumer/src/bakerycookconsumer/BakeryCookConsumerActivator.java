@@ -20,19 +20,21 @@ public class BakeryCookConsumerActivator implements BundleActivator {
 		System.out.println(bakeryadminproducer.wellcomeCook());
 		bakeryadminproducer.ViewAllRecord();
 		
-//		System.out.println("_________________________________ Bakery Shop Add New Recipes _________________________________\n");
-//		System.out.println("Item Categorys :Bars\tBreads\tBreakfast Products\tCookies\tDessertsEnter\n ");
-//		System.out.println("Enter food Item ?");
-//		String bcfoodItem = sc.next();
-//		System.out.println("Enter recipes Name ?");
-//		String bcrecipesName = sc.next();
-//		System.out.println("Enter Driscription ?");
-//		String bcDriscription = sc.next();
-//		bakeryadminproducer.insertnewRecipes(bcfoodItem , bcrecipesName ,bcDriscription);
+		System.out.println("_________________________________ Bakery Shop Add New Recipes _________________________________\n");
+		System.out.println("Item Categorys :Bars\tBreads\tBreakfast Products\tCookies\tDessertsEnter\n ");
+		System.out.println("Enter food Item ?");
+		String bcfoodItem = sc.next();
+		System.out.println("Enter recipes Name ?");
+		String bcrecipesName = sc.next();
+		System.out.println("Enter Driscription ?");
+		String bcDriscription = sc.next();
+		bakeryadminproducer.insertnewRecipes(bcfoodItem , bcrecipesName ,bcDriscription);
 	
 	}
 
 	public void stop(BundleContext context) throws Exception {
+		System.out.println("Cook Consumer Stop !!!");
+		context.ungetService(serviceReference);
 		
 	}
 
