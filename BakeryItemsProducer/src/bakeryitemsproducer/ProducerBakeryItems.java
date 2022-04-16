@@ -11,7 +11,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 	boolean itemSaveSuccMsg , isEmptyCategory, invalidID;
 	String BillName = "demo";
 	public int myBillGrandTot;
-	
+	String Fpath = System.getProperty("user.dir");
 	
 	
 	public int getMyBillGrandTot() {
@@ -87,7 +87,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		 boolean found = false;
 			
 			try {  
-			      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
+			      File myObj2 = new File(Fpath+"\\ItemsList.txt");  
 			      if (myObj2.createNewFile()) {  
 			        System.out.println("File created: " + myObj2.getName()); 
 			        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -175,7 +175,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 				
 				try {
 					
-					File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
+					File myObj2 = new File(Fpath+"\\ItemsList.txt");  
 					if (myObj2.createNewFile()) {  
 				        System.out.println("File created: " + myObj2.getName());  
 				        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -260,7 +260,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {
 			
-			File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
+			File myObj2 = new File(Fpath+"\\ItemsList.txt");  
 			if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName());  
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -353,7 +353,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 				
 				try {
 					
-					File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
+					File myObj2 = new File(Fpath+"\\ItemsList.txt");  
 					if (myObj2.createNewFile()) {  
 				        System.out.println("File created: " + myObj2.getName());  
 				        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -442,7 +442,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {  
 			
-		      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
+		      File myObj2 = new File(Fpath+this.getBillName()+".txt");  
 		      if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName()); 
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -530,7 +530,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {
 			
-			File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
+			File myObj2 = new File(Fpath+"\\ItemsList.txt");  
 			if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName());  
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -604,7 +604,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {  
 			
-		      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
+		      File myObj2 = new File(Fpath+"\\"+this.getBillName()+".txt");  
 		      if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName()); 
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -671,7 +671,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		
 		try {  
 			
-		      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\"+this.getBillName()+".txt");  
+		      File myObj2 = new File(Fpath+"\\"+this.getBillName()+".txt");  
 		      if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName()); 
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -728,7 +728,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 		 boolean found = false;
 			
 			try {  
-			      File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\BillRegister.txt");  
+			      File myObj2 = new File(Fpath+"\\BillRegister.txt");  
 			      if (myObj2.createNewFile()) {  
 			        System.out.println("File created: " + myObj2.getName()); 
 			        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 

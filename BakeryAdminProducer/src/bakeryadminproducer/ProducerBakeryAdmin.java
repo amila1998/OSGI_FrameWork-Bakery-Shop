@@ -11,6 +11,7 @@ import deliveryRegister.deliveyR;
 public class ProducerBakeryAdmin implements BakeryAdminProducer {
 	Scanner input = new Scanner(System.in);
 	deliveyR delivery = new deliveyR();
+	String Fpath = System.getProperty("user.dir");
 	@Override
 	public String myName() {
 		
@@ -43,7 +44,7 @@ public class ProducerBakeryAdmin implements BakeryAdminProducer {
 			e.printStackTrace();
 		}*/
 		try {  
-		      File myObj = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\driver.txt");  
+		      File myObj = new File(Fpath+"\\driver.txt");  
 		      if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
 		        System.out.println("File Opened: " + myObj.getAbsolutePath()); 
@@ -132,7 +133,7 @@ public class ProducerBakeryAdmin implements BakeryAdminProducer {
 	}
 	public void ViewAllRecord()  {
 		try {
-		      File myObj = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\driver.txt");
+		      File myObj = new File(Fpath+"\\driver.txt");
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
