@@ -36,16 +36,16 @@
   <h3 align="center">OSGI FrameWork for Bakery Shop</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    <a href="https://www.sliit.lk/"><strong>Sri Lanka Institute of Information Technology</strong></a>
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    Software Architecture - SE3030
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="Docs/SE3030_SA_Assignment01_and_MarkingScheme_2022.pdf">Assignment 01 </a>
+    <br />
+    SE3030_WE_72
+    <br />
+    
   </p>
 </div>
 
@@ -56,20 +56,38 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#Scenario">Scenario</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#Workflows">Workflows</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#Customer-workflow">Customer workflow</a></li>
+        <li><a href="#Admin-workflow">Admin workflow</a></li>
+        <li><a href="#Cook-workflow">Cook workflow</a></li>
+        <li><a href="#Delivery-Workflow">Delivery Workflow</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#Manifest-implementation-(Exported-services/imported-services)">Manifest implementation (Exported services / imported services)</a>
+    <ul>
+        <li><a href="#Bakery-Item-Producer">Bakery Item Producer</a></li>
+        <li><a href="#Bakery-Item-Producer">Bakery Item Producer</a></li>
+        <li><a href="#Bakery-Delivery-Consumer">Bakery Delivery Consumer</a></li>
+        <li><a href="#Bakery-Customer-Producer">Bakery Customer Producer</a></li>
+        <li><a href="#Bakery-Customer-Consumer">Bakery Customer Consumer</a></li>
+         <li><a href="#Bakery-Cook-Producer">Bakery Cook Producer</a></li>
+          <li><a href="#Bakery-Cook-Consumer">Bakery Cook Consumer</a></li>
+           <li><a href="#Bakery-Admin-Consumer">Bakery Admin Consumer</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a>
+    <ul>
+        <li><a href="#Commands-of-bundle-install-and-run-in-OSGi-framework.">Commands of bundle install and run in OSGi framework. </a></li>
+        <li><a href="#Sample-screenshots of its behavior & outputs.">Sample screenshots of its behavior & outputs. </a></li>
+      </ul>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -80,20 +98,16 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Scenario
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Our system is being used to run a bakery shop. Customer consumer can create an account with the store. Then they'll be able to place orders. The administrator user can add items to the store and create accounts for delivery people. Customers' orders will be accepted by the cook consumer, who will also be able to add recopies to the store. The delivery person consumer can then accept deliveries and update the status of those that have been completed.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+If a customer already has an account, they will be asked to login during the registration process. They will be asked to enter their name, phone number, email address, and address if they do not already have one.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+During the process of adding an item, the administrator should enter the item's name, category, price, and quantity. The administrator can also register delivery people by providing their name, phone number, and login username and password.
+By entering the food item, recipe Id and name, and recipe description into the store system, the cook will save recipes to the system. The cook also can retrieve customer order information, update the status, and send the information to the delivery person.
+The delivery person will retrieve delivery information and, once the delivery has been completed, they will be able to update the delivery status.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -116,48 +130,65 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Workflows
+### Customer workflow
+<br/>
+    <img src="images/Customer workflow.png" alt="Customer workflow">
 
-### Prerequisites
+### Admin workflow
+<br/>
+    <img src="images/Admin workflow.png" alt="Customer workflow">
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
-### Installation
+### Cook workflow
+<br/>
+    <img src="images/Cook workflow.png" alt="Customer workflow">
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+### Delivery Workflow
+<br/>
+    <img src="images/Delivery Workflow.png" alt="Customer workflow">
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+## Manifest implementation (Exported services / imported services)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Bakery Item Producer
+<br/>
+    <img src="images/Bakery Item Producer.png" alt="Bakery Item Producer">
+
+### Bakery Delivery Producer
+<br/>
+    <img src="images/Bakery Delivery Producer.png" alt="Bakery Delivery Producer">
+
+### Bakery Delivery Consumer
+<br/>
+    <img src="images/Bakery Delivery Consumer.png" alt="Bakery Delivery Consumer">
+
+### Bakery Customer Producer
+<br/>
+    <img src="images/Bakery Customer Producer.png" alt="Bakery Customer Producer">
+
+### Bakery Cook Producer
+<br/>
+    <img src="images/Bakery Cook Producer.png" alt="Bakery Cook Producer">
+
+### Bakery Cook Consumer
+<br/>
+    <img src="images/Bakery Cook Consumer.png" alt="Bakery Cook Consumer">
+
+### Baker Item Producer
+<br/>
+    <img src="images/Baker Item Producer.png" alt="Baker Item Producer">
+
+### Bakery Admin Consumer
+<br/>
+    <img src="images/Bakery Admin Consumer.png" alt="Bakery Admin Consumer">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -166,15 +197,73 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Open the project via Eclips
+- [x] Run All the MANIFEST.MF
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+### Commands of bundle install and run in OSGi framework. 
+
+<br/>
+    Admin Consumer & Producer and Item Producer Active State 
+    <img src="images/Admin Consumer & Producer and Item Producer Active State.png" alt="Admin Consumer & Producer and Item Producer Active State">
+
+<br/>
+    Check Admin Producer and Items Producer connectivity with the Admin Consumer 
+    <img src="images/Check Admin Producer and Items Producer connectivity with the Admin Consumer.png" alt="Check Admin Producer and Items Producer connectivity with the Admin Consumer">
+
+<br/>
+    Bakery Customer Consumer & Producer and Bakery Items Producer Active State 
+    <img src="images/Bakery Customer Consumer & Producer and Bakery Items Producer Active State.png" alt="Bakery Customer Consumer & Producer and Bakery Items Producer Active State">
+
+<br/>
+    Check Customer Producer and Items Producer connectivity with the Customer Consumer 
+    <img src="images/Check Customer Producer and Items Producer connectivity with the Customer Consumer.png" alt="Check Customer Producer and Items Producer connectivity with the Customer Consumer">
+
+<br/>
+    Bakery Cook Consumer and Bakery Admin Producer Active State 
+    <img src="images/Bakery Cook Consumer and Bakery Admin Producer Active State.png" alt="Bakery Cook Consumer and Bakery Admin Producer Active State">
+
+
+<br/>
+    Check Bakery Cook Consumer connectivity with Bakery Admin Producer 
+    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.png" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
+
+<br/>
+    Check Bakery Cook Consumer connectivity with Bakery Admin Producer 
+    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.png" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
+
+### Sample screenshots of its behavior & outputs.
+
+<br/>
+    Add Items to the bakery 
+    <img src="images/Add Items to the bakery.png" alt="Add Items to the bakery">
+
+<br/>
+    Add delivery person 
+    <img src="images/Add delivery person.png" alt="Add delivery person">
+
+<br/>
+    Customer registration 
+    <img src="images/Customer registration.png" alt="Customer registration">
+
+<br/>
+    Customer Login 
+    <img src="images/Customer Login.png" alt="Customer Login">
+
+<br/>
+    Buy Items 
+    <img src="images/Buy Items.png" alt="Buy Items">
+    <img src="images/Buy Items 2.png" alt="Buy Items">
+    <img src="images/Buy Items 3.png" alt="Buy Items">
+
+<br/>
+    Adding a recipe 
+    <img src="images/Adding a recipe.jpg" alt="Adding a recipe">
+
+
+See the [open issues](amila1998/OSGI_FrameWork-Bakery-Shop/issues) for a full list of proposed features (and known issues).
+
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -189,9 +278,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch
+3. Commit your Changes
+4. Push to the Branch 
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -201,8 +290,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
+Distributed under the SLIIT License.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -210,9 +298,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Group Leader - [Wijesuriya W A D J K D - IT20750374](https://www.linkedin.com/in/kevin-wijesooriya-1b0197226/) - it20750374@my.sliit.lk
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Member - [Senarathne S M A D - IT20089436](https://www.linkedin.com/in/amila-devin-37811b83/) - it20089436@my.sliit.lk
+
+Member - [Udayantha Yapa Y M S - IT20045708](https://www.linkedin.com/in/sean-udayantha/) - it20045708@my.sliit.lk
+
+Member - [Kumarasingha S N - IT20151638](https://www.linkedin.com/in/sithara-kumarasingha-161647229/) - it20151638@my.sliit.lk
+
+Project Link: [https://github.com/amila1998/OSGI_FrameWork-Bakery-Shop](https://github.com/amila1998/OSGI_FrameWork-Bakery-Shop)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -221,16 +315,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Thank all SLIIT Lectures and who helps to develope and understand this Architecture
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
