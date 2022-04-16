@@ -11,6 +11,7 @@ import bakerycook.CookRecipes;
 public class ProducerBakeryCook implements BakeryCookProducer{
 	Scanner input = new Scanner(System.in);
 	CookRecipes recipes  = new CookRecipes();
+	String Fpath = System.getProperty("user.dir");
 
 	@Override
 	public String wellcomeCook() {
@@ -33,7 +34,7 @@ public class ProducerBakeryCook implements BakeryCookProducer{
 		boolean found = false;
 
 		try {  
-			File myObj = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\Recipes.txt");  
+			File myObj = new File(Fpath+"\\Recipes.txt");  
 			if (myObj.createNewFile()) {  
 				System.out.println("File created: " + myObj.getName());  
 				System.out.println("File Opened: " + myObj.getAbsolutePath()); 
@@ -119,19 +120,31 @@ public class ProducerBakeryCook implements BakeryCookProducer{
 
 
 	public void ViewAllRecord()  {
-		try {
-		      File myObj = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\oder.txt");
-		      Scanner myReader = new Scanner(myObj);
-		      while (myReader.hasNextLine()) {
-		        String data = myReader.nextLine();
-		        System.out.println("......................................Avilabal Oders in shop....................................\n");
-		        System.out.println(data);
-		      }
-		      myReader.close();
-		    } catch (FileNotFoundException e) {
-		      System.out.println("An error occurred.");
-		      e.printStackTrace();
-		    }
+		
+		      try {
+		    	File myObj = new File(Fpath+"\\oder.txt");
+				if (myObj.createNewFile()) {  
+						System.out.println("File created: " + myObj.getName());  
+						System.out.println("File Opened: " + myObj.getAbsolutePath()); 
+					} else {
+						System.out.println("File Opened: " + myObj.getAbsolutePath()); 
+					}
+				  Scanner myReader = new Scanner(myObj);
+			      while (myReader.hasNextLine()) {
+			        String data = myReader.nextLine();
+			        System.out.println("......................................Avilabal Oders in shop....................................\n");
+			        System.out.println(data);
+			      }
+			      myReader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		    
+//		    } catch ( {
+//		      System.out.println("An error occurred.");
+//		      e.printStackTrace();
+//		    }
 
     }
 	@Override

@@ -7,6 +7,7 @@ import java.io.RandomAccessFile;
 public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 	public boolean Lsucc =false;
 	public String name;
+	String Fpath = System.getProperty("user.dir");
 	
 	public boolean isLsucc() {
 		return Lsucc;
@@ -30,7 +31,7 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 		
 		try {
 			
-			File myObj = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\driver.txt");  
+			File myObj = new File(Fpath+"\\driver.txt");  
 			if (myObj.createNewFile()) {  
 		        System.out.println("File created: " + myObj.getName());  
 		        System.out.println("File Opened: " + myObj.getAbsolutePath()); 
@@ -127,7 +128,7 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 		
 		try {
 			
-			File myObj2 = new File("C:\\Users\\Hashi\\Desktop\\New folder (6)\\ItemsList.txt");  
+			File myObj2 = new File(Fpath+"\\ItemsList.txt");  
 			if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName());  
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
