@@ -73,11 +73,6 @@ public class BakeryAdminConsumerActivator implements BundleActivator {
 		  
 		}
 		
-
-		
-
-
-
 	}
 
 	public void stop(BundleContext context) throws Exception {
