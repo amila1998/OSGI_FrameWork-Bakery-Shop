@@ -220,16 +220,16 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <br/>
     Bakery Cook Consumer and Bakery Admin Producer Active State 
-    <img src="images/Bakery Cook Consumer and Bakery Admin Producer Active State.png" alt="Bakery Cook Consumer and Bakery Admin Producer Active State">
+    <img src="images/Bakery Cook Consumer and Bakery Admin Producer Active State.jpg" alt="Bakery Cook Consumer and Bakery Admin Producer Active State">
 
 
 <br/>
     Check Bakery Cook Consumer connectivity with Bakery Admin Producer 
-    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.png" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
+    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.jpg" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
 
 <br/>
     Check Bakery Cook Consumer connectivity with Bakery Admin Producer 
-    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.png" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
+    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.jpg" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
 
 ### Sample screenshots of its behavior & outputs.
 
