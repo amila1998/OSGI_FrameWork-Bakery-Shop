@@ -124,11 +124,11 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 
 	@Override
 	public void showList() {
-		/**boolean found = false;
+boolean found = false;
 		
 		try {
 			
-			File myObj2 = new File(Fpath+"\\ItemsList.txt");  
+			File myObj2 = new File(Fpath+"\\BillRegister.txt");  
 			if (myObj2.createNewFile()) {  
 		        System.out.println("File created: " + myObj2.getName());  
 		        System.out.println("File Opened: " + myObj2.getAbsolutePath()); 
@@ -138,10 +138,9 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 		    	  try { 
 		    		  String nameNumberString;
 		    		  int index;
-		    		  String iiID;
-		              String iiQty;
-		              String iTPrice;
-		              String DStat;
+		    		  String BillID;
+		              String GPrice;
+		              String DStatus;
 		             
 		              RandomAccessFile raf
 		                = new RandomAccessFile(myObj2, "rw");
@@ -149,7 +148,7 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 		              System.out.println("|---------------------------------|");
 		              System.out.println("|-------- Delivary -----------|");
 		              System.out.println("|---------------------------------|");
-		              System.out.println("| \tID\t|\tName\t|\tPrice\t|\tQty |");
+		              System.out.println("| \tBill ID\t|\tPrice\t|\tStatus |");
 		              
 		              while (raf.getFilePointer() < raf.length()) {
 		 
@@ -161,18 +160,18 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 		                    = nameNumberString.split("!");
 		 
 		          	 
-		              iiID = lineSplit[0];
-		              iiQty = lineSplit[1];
-		              iTPrice = lineSplit[2];
+		                BillID = lineSplit[0];
+		                GPrice = lineSplit[1];
+		                DStatus = lineSplit[2];
 		              
 		                	
 
 		                
 		                
-		                if ( DStat.equals("YES")) {
+		                if ( DStatus.equals("YES")) {
 		                    found = true;
 		                    System.out.println("|---------------------------------|");
-		            		System.out.println("| "+ iiID+"\t|\t"+iiQty+"\t|\t"+iPrice+"\t|\t"+iQty+" |");
+		            		System.out.println("| "+  BillID+"\t|\t"+GPrice+"\t|\t"+ DStatus+"|");
 		            		
 		                    continue;
 		                }
@@ -201,7 +200,6 @@ public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();  
 		    }
-**/
 		
 	}
 
