@@ -219,8 +219,12 @@ The microkernel architecture pattern (sometimes referred to as the plug-in archi
     <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.jpg" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
 
 <br/>
-    Check Bakery Cook Consumer connectivity with Bakery Admin Producer 
-    <img src="images/Check Bakery Cook Consumer connectivity with Bakery Admin Producer.jpg" alt="Check Bakery Cook Consumer connectivity with Bakery Admin Producer">
+    Delivery Consumer & Producer and Item Producer Active State
+    <img src="images/Delivery Consumer & Producer and Item Producer Active State.png" alt="Delivery Consumer & Producer and Item Producer Active State">
+
+<br/>
+    Check Delivery Consumer & Producer and Item Producer connectivity
+    <img src="images/Check Delivery Consumer & Producer and Item Producer connectivity.png" alt="Check Delivery Consumer & Producer and Item Producer connectivity">
 
 ### Sample screenshots of its behavior & outputs.
 
@@ -249,6 +253,10 @@ The microkernel architecture pattern (sometimes referred to as the plug-in archi
 <br/>
     Adding a recipe 
     <img src="images/Adding a recipe.jpg" alt="Adding a recipe">
+
+<br/>
+    Driver Login and Show Delivary list 
+    <img src="images/Driver Login and Show Delivary list.png" alt="Driver Login and Show Delivary list">
 
 
 See the [open issues](amila1998/OSGI_FrameWork-Bakery-Shop/issues) for a full list of proposed features (and known issues).
