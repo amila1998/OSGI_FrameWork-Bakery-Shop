@@ -259,6 +259,7 @@ The microkernel architecture pattern (sometimes referred to as the plug-in archi
     <img src="images/Driver Login and Show Delivary list.png" alt="Driver Login and Show Delivary list">
 
 
+
 See the [open issues](amila1998/OSGI_FrameWork-Bakery-Shop/issues) for a full list of proposed features (and known issues).
 
 
