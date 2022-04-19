@@ -11,7 +11,7 @@ public class ProducerBakeryItems implements BakeryItemsProducer{
 	boolean itemSaveSuccMsg , isEmptyCategory, invalidID;
 	String BillName = "demo";
 	public int myBillGrandTot;
-	String Fpath = System.getProperty("user.dir");
+	String Fpath = System.getProperty("user.home");
 	
 	
 	public int getMyBillGrandTot() {

@@ -11,7 +11,7 @@ import bakerycook.CookRecipes;
 public class ProducerBakeryCook implements BakeryCookProducer{
 	Scanner input = new Scanner(System.in);
 	CookRecipes recipes  = new CookRecipes();
-	String Fpath = System.getProperty("user.dir");
+	String Fpath = System.getProperty("user.home");
 
 	@Override
 	public String wellcomeCook() {

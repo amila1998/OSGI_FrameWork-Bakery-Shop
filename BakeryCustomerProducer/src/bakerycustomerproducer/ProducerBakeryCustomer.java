@@ -19,7 +19,7 @@ import mongoDBConn.DBManager;
 
 public class ProducerBakeryCustomer implements BakeryCustomerProducer {
 	private boolean lMsg;
-	String Fpath = System.getProperty("user.dir");
+	String Fpath = System.getProperty("user.home");
 	
 	
 	

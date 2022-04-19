@@ -7,7 +7,7 @@ import java.io.RandomAccessFile;
 public class ProducerBakeryDelivery implements BakeryDeliveryProducer{
 	public boolean Lsucc =false;
 	public String name;
-	String Fpath = System.getProperty("user.dir");
+	String Fpath = System.getProperty("user.home");
 	
 	public boolean isLsucc() {
 		return Lsucc;
